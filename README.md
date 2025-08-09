@@ -1,80 +1,68 @@
-Exploratory Data Analysis (EDA) – Iris Dataset 
+Exploratory Data Analysis (EDA) Process for Extended Iris Dataset
+1️⃣ Introduction
+Exploratory Data Analysis (EDA) is the process of analyzing datasets to summarize their main characteristics, often using visual methods.
+For the Extended Iris Dataset, EDA helps us understand the patterns, relationships, and distributions within the data before applying any machine learning model.
 
-Exploratory Data Analysis (EDA) is the heart of understanding our dataset before diving into model building. For the Iris dataset, we focused on visualizing patterns, spotting trends, and understanding feature relationships that help in classification tasks.
+2️⃣ Dataset Overview
+Name: Extended Iris Dataset
 
-1. Understanding the Dataset 
-Dataset Size: 150 rows × 5 columns
+Description: Contains measurements of iris flowers along with extended attributes such as soil type, sunlight exposure, and watering frequency.
 
-Features:
+Target Variable: Iris Species (Setosa, Versicolor, Virginica)
 
-Sepal Length (cm)
+Total Features: Core + Extended attributes
 
-Sepal Width (cm)
+3️⃣ Steps in EDA Process
+📌 Step 1: Data Loading & Inspection
+Load dataset using Pandas.
 
-Petal Length (cm)
+Check first few rows with df.head().
 
-Petal Width (cm)
+Inspect data types, shape, and missing values.
 
-Species (Target Variable) – Iris-setosa, Iris-versicolor, Iris-virginica
+python
+Copy
+Edit
+df.info()
+df.describe()
+df.isnull().sum()
 
-2. Data Quality Checks 
-Null Values: Checked for missing data → None found.
+📌 Step 2: Statistical Summary
+Use .describe() to get numerical feature statistics.
 
-Duplicates: Removed if any (ensures clean data).
+Identify mean, median, standard deviation, and ranges for each feature.
 
-Data Types: Verified numerical and categorical columns for accuracy.
+📌 Step 3: Data Cleaning
+Handle missing values (if any) via imputation or removal.
 
-3. Statistical Summary 
-Using df.describe() we observed:
+Convert categorical columns to numerical (Label Encoding).
 
-Mean & Median to understand central tendency.
+Remove duplicates if present.
 
-Min & Max for range of values.
+📌 Step 4: Univariate Analysis
+Histograms → Distribution of individual features.
 
-Standard Deviation for spread of features.
+Boxplots → Detect outliers and spread of data.
 
-Key Insights:
+Countplots → Frequency of categorical variables.
 
-Petal length and petal width show high variation across species, making them great predictors.
+📌 Step 5: Bivariate Analysis
+Scatter Plots → Relationships between two numerical features.
 
-Sepal width has the widest range and slightly skewed distribution.
+Pairplots → Compare multiple features at once.
 
-4. Data Visualization 
-a) Univariate Analysis (One Feature at a Time)
-Histograms: Showed feature distributions for each species.
+Correlation Heatmap → Identify linear relationships.
 
-Boxplots: Revealed outliers, especially in sepal width.
+📌 Step 6: Multivariate Analysis
+Pairplot by Species → Visualize how features separate species.
 
-b) Bivariate Analysis (Two Features Together)
-Scatter Plots: Petal length vs. petal width gave clear separation between species.
+3D Scatter Plots → Explore feature interactions.
 
-Pairplot (Seaborn): Allowed us to view all feature relationships at once.
+Group Statistics → Compare feature means across species.
 
-c) Multivariate Insights
-Correlation Heatmap: Showed strong positive correlation between petal length and petal width.
+📌 Step 7: Extended Features Visualization
+Bar charts for soil type vs average petal/sepal sizes.
 
-Violin Plots: Displayed distribution and density differences per species in an aesthetic way.
+Stacked plots for sunlight exposure and species distribution.
 
-5. Class Separability Observation 
-Iris-setosa: Well-separated from the other two species in petal measurements.
-
-Iris-versicolor & Iris-virginica: Some overlap but still separable through feature combinations.
-
-6. Outcome of EDA 
-Identified petal features as the strongest predictors.
-
-Discovered that sepal features have partial overlap between species.
-
-Confirmed balanced dataset (equal samples for each species).
-
-Visual Storytelling Tools Used:
-
-Matplotlib → For simple plots.
-
-Seaborn → For stylish statistical plots.
-
-Heatmaps → For correlation insights.
-
-Pairplots → For overall relationship mapping.
-
-📌 This EDA provided the foundation for building an accurate classification model, as we now understand which features carry the most predictive power.
+Boxplots to compare watering frequency across species.
