@@ -1,75 +1,80 @@
-Exploratory Data Analysis (EDA) – Iris Dataset
-Exploratory Data Analysis (EDA) is the process of visually and statistically summarizing data to understand its structure, spot patterns, detect anomalies, and generate insights before applying machine learning models.
+Exploratory Data Analysis (EDA) – Iris Dataset 
 
-For the Iris dataset, the EDA process involves:
+Exploratory Data Analysis (EDA) is the heart of understanding our dataset before diving into model building. For the Iris dataset, we focused on visualizing patterns, spotting trends, and understanding feature relationships that help in classification tasks.
 
-1. Understanding the Dataset
-Objective: Identify the type of data, features, and target variable.
+1. Understanding the Dataset 
+Dataset Size: 150 rows × 5 columns
 
-Actions:
+Features:
 
-Load the dataset using pandas.read_csv() or from sklearn.datasets.
+Sepal Length (cm)
 
-Display the first few rows using df.head() to get an initial feel.
+Sepal Width (cm)
 
-Check the dataset shape (df.shape) to know the number of rows and columns.
+Petal Length (cm)
 
-Review column names and their meanings (Sepal Length, Sepal Width, Petal Length, Petal Width, Species).
+Petal Width (cm)
 
-2. Data Summary & Structure
-Objective: Understand the data distribution and basic statistics.
+Species (Target Variable) – Iris-setosa, Iris-versicolor, Iris-virginica
 
-Actions:
+2. Data Quality Checks 
+Null Values: Checked for missing data → None found.
 
-Use df.info() to check data types and missing values.
+Duplicates: Removed if any (ensures clean data).
 
-Use df.describe() for summary statistics (mean, std, min, max, quartiles).
+Data Types: Verified numerical and categorical columns for accuracy.
 
-Check class balance with df['species'].value_counts().
+3. Statistical Summary 
+Using df.describe() we observed:
 
-3. Univariate Analysis
-Objective: Study each variable independently.
+Mean & Median to understand central tendency.
 
-Actions:
+Min & Max for range of values.
 
-Histograms for each numeric feature to see distribution.
+Standard Deviation for spread of features.
 
-Boxplots to detect outliers.
+Key Insights:
 
-Count plots for the target variable (Species).
+Petal length and petal width show high variation across species, making them great predictors.
 
-4. Bivariate Analysis
-Objective: Explore relationships between features and the target.
+Sepal width has the widest range and slightly skewed distribution.
 
-Actions:
+4. Data Visualization 
+a) Univariate Analysis (One Feature at a Time)
+Histograms: Showed feature distributions for each species.
 
-Pair plots (sns.pairplot) to visualize feature relationships across species.
+Boxplots: Revealed outliers, especially in sepal width.
 
-Scatter plots for selected feature pairs, colored by species.
+b) Bivariate Analysis (Two Features Together)
+Scatter Plots: Petal length vs. petal width gave clear separation between species.
 
-Violin plots to compare feature distributions per species.
+Pairplot (Seaborn): Allowed us to view all feature relationships at once.
 
-5. Correlation Analysis
-Objective: Identify relationships between numerical features.
+c) Multivariate Insights
+Correlation Heatmap: Showed strong positive correlation between petal length and petal width.
 
-Actions:
+Violin Plots: Displayed distribution and density differences per species in an aesthetic way.
 
-Calculate correlation matrix using df.corr().
+5. Class Separability Observation 
+Iris-setosa: Well-separated from the other two species in petal measurements.
 
-Visualize with a heatmap (sns.heatmap) to spot strong or weak correlations.
+Iris-versicolor & Iris-virginica: Some overlap but still separable through feature combinations.
 
-6. Insights & Observations
-Typical findings for the Iris dataset:
+6. Outcome of EDA 
+Identified petal features as the strongest predictors.
 
-Petal length and petal width are highly correlated and useful for classification.
+Discovered that sepal features have partial overlap between species.
 
-Sepal measurements show more overlap between species.
+Confirmed balanced dataset (equal samples for each species).
 
-Setosa is well-separated from other species in feature space.
+Visual Storytelling Tools Used:
 
-Versicolor and Virginica overlap slightly, making classification more challenging.
+Matplotlib → For simple plots.
 
-7. Visualization Tools Used
-Matplotlib for basic charts.
+Seaborn → For stylish statistical plots.
 
-Seaborn for advanced visualizations (pair plots, violin plots, heatmaps).
+Heatmaps → For correlation insights.
+
+Pairplots → For overall relationship mapping.
+
+📌 This EDA provided the foundation for building an accurate classification model, as we now understand which features carry the most predictive power.
