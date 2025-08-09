@@ -1,4 +1,5 @@
 Exploratory Data Analysis (EDA) Process for Extended Iris Dataset
+
 1️⃣ Introduction
 Exploratory Data Analysis (EDA) is the process of analyzing datasets to summarize their main characteristics, often using visual methods.
 For the Extended Iris Dataset, EDA helps us understand the patterns, relationships, and distributions within the data before applying any machine learning model.
@@ -13,6 +14,7 @@ Target Variable: Iris Species (Setosa, Versicolor, Virginica)
 Total Features: Core + Extended attributes
 
 3️⃣ Steps in EDA Process
+
 📌 Step 1: Data Loading & Inspection
 Load dataset using Pandas.
 
